@@ -25,12 +25,12 @@
     "server-side-render",
     "boilerplate"
   ],
-  "author": "Yogesh Choudhary <yogesum@gmail.com>",
+  "author": "Darshit Vora <darshitvvora@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/yogesum/vue-express-sequelize-base/issues"
+    "url": "https://github.com/darshitvvora/vue-express-sequelize-base/issues"
   },
-  "homepage": "https://github.com/yogesum/vue-express-sequelize-base#readme",
+  "homepage": "https://github.com/darshitvvora/vue-express-sequelize-base#readme",
   "dependencies": {
     "@nuxtjs/axios": "^5.1.1",
     "axios": "^0.18.0",

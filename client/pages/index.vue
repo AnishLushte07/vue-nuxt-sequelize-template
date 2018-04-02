@@ -7,4 +7,5 @@ div(v-if='$store.state.user')
 
   p: nuxt-link(to='/secret') Super secret page
   p: nuxt-link(to='/about') /About
+  p: nuxt-link(to='/users') /Users
 </template>
