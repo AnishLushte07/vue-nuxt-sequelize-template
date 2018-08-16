@@ -13,24 +13,19 @@ class User extends Model {
    * @param  {Object} model Sequelize source model
    * @return {void}       setup source model associations with User model
    */
-  static trackModel(model) {
-    const {
-      options: {
-        timestamps, createdAt = true, updatedAt = true, paranoid,
-      },
-    } = model
-
-    if (timestamps) {
-      [
-        ...(createdAt ? ['creator'] : []),
-        ...(updatedAt ? ['updater'] : []),
-        ...(paranoid ? ['deleter'] : []),
-      ].forEach(as => model.belongsTo(this, { as }))
-    }
-  }
 
   static associate() {
-    this.trackModel(this)
+    this.belongsTo(this, {
+      foreignKey: 'creatorId',
+    })
+
+    this.belongsTo(this, {
+      foreignKey: 'deleterId',
+    })
+
+    this.belongsTo(this, {
+      foreignKey: 'updaterId',
+    })
   }
 
   static async getHash(password) {
@@ -62,6 +57,7 @@ module.exports = User.init({
   password: DataTypes.CHAR(60).BINARY,
 }, {
   sequelize,
+  timestamps: true,
   paranoid: true,
   defaultScope: {
     attributes: { exclude: ['password'] },

@@ -10,7 +10,7 @@ const { errorHandler } = require('../components/middlewares')
 
 module.exports = function expressSetup(app) {
   app.set('env', env)
-  app.use(helmet())
+  //app.use(helmet())
 
   // Body parser, to access req.body
   app.use(bodyParser.urlencoded({ extended: false }))
